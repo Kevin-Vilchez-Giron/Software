@@ -1,0 +1,17 @@
+Options All -Indexes
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9/]+)$ index.php?views=$1
+RewriteEngine On
+RewriteCond %{HTTP_HOST} localhost/sistemainvent/ [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$http://localhost/sistemainvent/$1 [R,L]
+
+<FilesMatch "\.(?i:gif|jpe?g|png|ico|css|js|swf)$">
+
+  <IfModule mod_headers.c>
+    Header set Cache-Control "max-age=172800, public, must-revalidate"
+  </IfModule>
+
+</FilesMatch>
+
+
